@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import pe.edu.upc.moviesapp.R
 import pe.edu.upc.moviesapp.dbhelper.DBMovieHelper
 import pe.edu.upc.moviesapp.models.MovieDTO
@@ -16,7 +17,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var db: DBMovieHelper
     private var lstMovies: List<MovieDTO> = ArrayList()
 
-    private lateinit var constraintLayoutManager: LinearLayoutManager
+    private lateinit var linearLayoutManager: RecyclerView.LayoutManager
+
+    private lateinit var recyclerView: RecyclerView
+
+    private lateinit var movieAdapter: RecyclerView.Adapter<*>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +30,20 @@ class MainActivity : AppCompatActivity() {
         addNewMovieButton = findViewById(R.id.new_movie_icon)
 
         pressButton()
-
         db = DBMovieHelper(this)
-        refreshData()
+
+        lstMovies = db.allMovies
+
+        recyclerView = findViewById(R.id.movies_recycler_view)
+
+        linearLayoutManager = LinearLayoutManager(this)
+
+        movieAdapter = MovieAdapter(lstMovies)
+
+        recyclerView.layoutManager = linearLayoutManager
+
+        recyclerView.adapter = movieAdapter
+
     }
 
     private fun pressButton() {
@@ -36,9 +52,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    private fun refreshData() {
-
     }
 }

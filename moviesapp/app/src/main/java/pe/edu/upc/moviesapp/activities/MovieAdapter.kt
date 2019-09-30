@@ -27,7 +27,9 @@ class MovieAdapter (var list: List<MovieDTO>): RecyclerView.Adapter<MovieViewHol
 
         holder.posterImageView.setOnClickListener {
             val context = it.context
-            context.startActivity(Intent(context, MovieDetailActivity::class.java))
+            val intent = Intent(context, MovieDetailActivity::class.java)
+            intent.putExtra("movie", list[position])
+            context.startActivity(intent)
         }
 
     }

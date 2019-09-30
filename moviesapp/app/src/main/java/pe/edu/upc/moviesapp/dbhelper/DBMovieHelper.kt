@@ -66,8 +66,15 @@ class DBMovieHelper (
                     movie.genre = cursor.getString(cursor.getColumnIndex(COL_GENRE))
                     movie.runtime = cursor.getString(cursor.getColumnIndex(COL_RUNTIME))
                     movie.rating = cursor.getInt(cursor.getColumnIndex(COL_RATING))
+
+                    lstMovies.add(movie)
                 } while (cursor.moveToNext())
             }
+
+
+
+            cursor.close()
+            db.close()
 
             return lstMovies
         }

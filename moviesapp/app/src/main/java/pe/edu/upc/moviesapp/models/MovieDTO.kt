@@ -1,6 +1,8 @@
 package pe.edu.upc.moviesapp.models
 
-class MovieDTO {
+import java.io.Serializable
+
+class MovieDTO : Serializable {
     var id: Int?= 0
     var title: String? = null
     var imageUrl: String? = null

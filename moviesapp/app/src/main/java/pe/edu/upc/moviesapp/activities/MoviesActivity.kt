@@ -56,7 +56,7 @@ class MoviesActivity : AppCompatActivity() {
 
     private fun pressGetMovieButton() {
         getMovieButton.setOnClickListener {
-            movieRepo.getMovie(apiKey = "bb7fd48c", t = movieTitle.text.toString()).enqueue(object : Callback<Movie> {
+            movieRepo.getMovie(t = movieTitle.text.toString(), apiKey = "bb7fd48c").enqueue(object : Callback<Movie> {
                 override fun onFailure(call: Call<Movie>, t: Throwable) {
                     Toast.makeText(this@MoviesActivity, "Can not get data", Toast.LENGTH_SHORT).show()
                 }

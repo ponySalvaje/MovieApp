@@ -4,14 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.upc.moviesapp.R
 import pe.edu.upc.moviesapp.dbhelper.DBMovieHelper
+import pe.edu.upc.moviesapp.models.MovieDTO
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var addNewMovieButton: ImageView
 
     private lateinit var db: DBMovieHelper
+    private var lstMovies: List<MovieDTO> = ArrayList()
+
+    private lateinit var constraintLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

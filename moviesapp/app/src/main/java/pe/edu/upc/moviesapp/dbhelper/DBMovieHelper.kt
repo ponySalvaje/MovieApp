@@ -32,7 +32,7 @@ class DBMovieHelper (
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery =
             ("CREATE TABLE $TABLE_NAME " +
-                    "($COL_ID INTEGER PRIMARY KEY IDENTITY," +
+                    "($COL_ID INTEGER IDENTITY PRIMARY KEY," +
                     "$COL_TITLE TEXT," +
                     "$COL_IMAGE_URL TEXT," +
                     "$COL_RELEASE_DATE TEXT," +

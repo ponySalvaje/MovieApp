@@ -17,7 +17,7 @@ class MovieDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
 
-        movieItemImage = findViewById(R.id.movie_image)
+        movieItemImage = findViewById(R.id.movie_detail_image)
         ratingTextView = findViewById(R.id.rating_text_view)
 
         var myMovie = intent.getSerializableExtra("movie") as MovieDTO

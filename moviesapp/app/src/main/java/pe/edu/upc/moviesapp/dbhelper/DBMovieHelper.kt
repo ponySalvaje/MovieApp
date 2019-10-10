@@ -72,6 +72,8 @@ class DBMovieHelper (
             }
 
 
+            //
+            lstMovies.sortBy { it.rating }
 
             cursor.close()
             db.close()

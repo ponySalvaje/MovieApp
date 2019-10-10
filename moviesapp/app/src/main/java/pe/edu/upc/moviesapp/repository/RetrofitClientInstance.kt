@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitClientInstance {
     companion object {
-        private val BASE_URL = "http://www.omdbapi.com/"
+        private const val BASE_URL = "http://www.omdbapi.com/"
         private lateinit var retrofit: Retrofit
     }
 

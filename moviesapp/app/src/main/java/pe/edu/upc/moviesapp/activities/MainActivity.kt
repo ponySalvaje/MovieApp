@@ -1,9 +1,9 @@
 package pe.edu.upc.moviesapp.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.upc.moviesapp.R
@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var db: DBMovieHelper
     private var lstMovies: List<MovieDTO> = ArrayList()
 
-    private lateinit var linearLayoutManager: RecyclerView.LayoutManager
-
     private lateinit var recyclerView: RecyclerView
+
+    private lateinit var linearLayoutManager: RecyclerView.LayoutManager
 
     private lateinit var movieAdapter: RecyclerView.Adapter<*>
 
